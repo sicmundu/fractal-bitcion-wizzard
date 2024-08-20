@@ -29,7 +29,7 @@ Before you begin, make sure your server meets the following requirements:
 First, download the script to your home directory:
 
 ```bash
-cd $HOME && wget -q -O fractald_installer.sh https://github.com/yourusername/fractal-node-installer/raw/main/fractald_installer.sh && chmod +x fractald_installer.sh
+cd $HOME && wget -q -O fractald_installer.sh https://github.com/sicmundu/fractal-bitcion-wizzard/raw/main/fractald_installer.sh && chmod +x fractald_installer.sh
 ```
 
 ### 2. Run the Installer
