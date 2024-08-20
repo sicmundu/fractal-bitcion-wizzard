@@ -1,6 +1,4 @@
-Конечно! Вот пример `README.md` для вашего скрипта:
 
-```markdown
 # Fractal Node Installer 🚀
 
 Welcome to the **Fractal Node Installer**! This script is your all-in-one solution for setting up and running a Fractal Node on your server. Whether you're a seasoned blockchain enthusiast or a curious newcomer, this guide will help you get up and running in no time. 🌟
