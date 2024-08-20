@@ -70,8 +70,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-Happy Node-ing! 🚀 If you find this script helpful, give us a ⭐ on GitHub!
-```
+Happy Node-ing! 🚀 If you find this script helpful, give me a ⭐ on GitHub!
 
 ### Key Points:
 
