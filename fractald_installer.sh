@@ -80,7 +80,7 @@ download_and_extract() {
 
 # Check if the wallet already exists
 check_wallet_exists() {
-    if [ -f "/root/.bitcoin/wallets/wallet/wallet.dat" ]; then
+    if [ -f "$HOME/.bitcoin/wallets/wallet/wallet.dat" ]; then
         log "${COLOR_GREEN}💰 Wallet already exists. Skipping wallet creation.${COLOR_RESET}"
         return 1
     fi
@@ -102,9 +102,9 @@ create_wallet() {
     ./bitcoin-wallet -wallet=wallet -legacy create || handle_error "Failed to create wallet."
 
     log "${COLOR_BLUE}🔑 Exporting the wallet private key...${COLOR_RESET}"
-    ./bitcoin-wallet -wallet=/root/.bitcoin/wallets/wallet/wallet.dat -dumpfile=/root/.bitcoin/wallets/wallet/MyPK.dat dump || handle_error "Failed to export wallet private key."
+    ./bitcoin-wallet -wallet=$HOME/.bitcoin/wallets/wallet/wallet.dat -dumpfile=$HOME/.bitcoin/wallets/wallet/MyPK.dat dump || handle_error "Failed to export wallet private key."
 
-    PRIVATE_KEY=$(awk -F 'checksum,' '/checksum/ {print "Wallet Private Key:" $2}' /root/.bitcoin/wallets/wallet/MyPK.dat)
+    PRIVATE_KEY=$(awk -F 'checksum,' '/checksum/ {print "Wallet Private Key:" $2}' $HOME/.bitcoin/wallets/wallet/MyPK.dat)
     log "${COLOR_RED}$PRIVATE_KEY${COLOR_RESET}"
     log "${COLOR_YELLOW}⚠️  Don't forget to write down your private key!${COLOR_RESET}"
 }
@@ -122,7 +122,7 @@ Description=Fractal Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=/root/fractald-0.1.7-x86_64-linux-gnu/bin/bitcoind -datadir=/root/fractald-0.1.7-x86_64-linux-gnu/data/ -maxtipage=504576000
+ExecStart=$HOME/fractald-0.1.7-x86_64-linux-gnu/bin/bitcoind -datadir=$HOME/fractald-0.1.7-x86_64-linux-gnu/data/ -maxtipage=504576000
 Restart=always
 RestartSec=5
 LimitNOFILE=infinity
